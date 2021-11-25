@@ -481,8 +481,9 @@
           this.wireColor = wireColor;
           this.doubleSide = false;
           this.rotate = false;
+          const texture = new THREE.TextureLoader().load("./assets/sirewall.jpg");
           const geometry = new THREE.BoxGeometry(front, height, depth);
-          const material = new THREE.MeshBasicMaterial({ color });
+          const material = new THREE.MeshBasicMaterial({ map: texture, side : THREE.DoubleSide });
           const materialWire = new THREE.MeshBasicMaterial({
             wireframe: true,
             color: wireColor,
